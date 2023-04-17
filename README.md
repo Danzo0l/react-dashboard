@@ -48,7 +48,7 @@ Use the recommended styles for the application component:
 }
 ```
 Тote that the buttons to open the side menus may overlap the content. Therefore, add indents for informational or functional blocks.  
-![buttons](assets/img/readme_1.png)
+![buttons](src/assets/img/readme_1.png)
 
 `Toolbar` and `Sidebar` has `children` props - you can create custom components and put it into component, for example:
 ``` tsx
