@@ -1,0 +1,29 @@
+.head {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 100%;
+  img {
+    height: 28px;
+  }
+  .btnToogleSidebar {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+
+    img {
+      height: 24px;
+      width: 24px;
+    }
+    svg {
+      fill: var(--btn-color);
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+html {
+  --main-text-color: #DEDEDE;
+  --header-text-color: #626262;
+  --back-color: #C4C4C4;
+  --bar-color: #C4C4C4;
+  --border-lines-color: #666666;
+  --color-background: #e6e6e6;
+  --color-font: black;
+  --color-select: #9CD5EE;
+  --color-completed: #6FCF97;
+  --color-warning: #D2B867;
+  --color-error: #F05B5B;
+}
+
+html[data-theme="dark"] {
+  --toogle-button: #76c8eb;
+  --main-text-color: #DEDEDE;
+  --header-text-color: #464646;
+  --main-color: #c7c7cc;
+  --back-color: #080810;
+  --bar-color: #080810;
+  --border-lines-color: #666666;
+  --color-selected-background: #ffffff16;
+  --btn-color: #DEDEDE;
+}
+
+html[data-theme="light"] {
+  --toogle-button: #008cff;
+  --main-text-color: #0e0e0e;
+  --header-text-color: #727272;
+  --back-color: #ececec;
+  --bar-color: #ececec;
+  --btn-color: #2c2c2c;
+  --border-lines-color: #c4c4c4;
+  --color-background: #ffffff;
+  --color-font: #464646;
+  --color-selected-background: #0000001c;
+}

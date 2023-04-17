@@ -1,0 +1,30 @@
+.account {
+    display: flex;
+    height: 48px;
+    width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    section {
+        padding-left: 10px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        span {
+            line-height: 140%;
+            display: inline-block;
+        }
+        .username {
+            font-size: 18px;
+            color: var(--main-text-color);
+        }
+        .mail {
+            font-size: 16px;
+            color: var(--header-text-color);
+        }
+    }
+    img {
+        border-radius: 8px;
+        box-shadow: 0 2px 5px var(--header-text-color);
+    }
+}

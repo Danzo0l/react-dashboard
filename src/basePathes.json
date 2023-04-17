@@ -1,0 +1,6 @@
+{
+  "home": "/",
+  "view": "account/view",
+  "edit": "/account/edit",
+  "settings": "/account/settings"
+}
