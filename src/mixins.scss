@@ -17,15 +17,3 @@
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
-@mixin color-hover {
-    &:hover {
-        color: var(--color-select);
-    }
-}
-
-@mixin bg-hover {
-    &:hover {
-        background-color: var(--color-selected-background);
-    }
-}
