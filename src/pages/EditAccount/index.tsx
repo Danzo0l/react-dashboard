@@ -1,7 +1,7 @@
 // import npm libs
 // import local libs
 // import styles
-import styles from "./EditAccount.module.scss";
+import styles from './EditAccount.module.scss';
 
 const EditAccount = () => {
   return (
@@ -12,3 +12,4 @@ const EditAccount = () => {
 };
 
 export default EditAccount;
+

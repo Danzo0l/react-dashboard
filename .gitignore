@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+index.tsx
+index.html
+App.tsx
+public
 
 # production
 /build
