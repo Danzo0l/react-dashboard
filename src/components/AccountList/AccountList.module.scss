@@ -38,11 +38,10 @@ section {
         .liInner {
             text-decoration: none;
             color: var(--main-text-color);
-        }
-        &:hover {
-            .liInner {
+            &:hover {
                 color: var(--color-select);
             }
         }
+        
     }
 }
