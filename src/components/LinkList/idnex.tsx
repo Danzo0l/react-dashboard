@@ -1,15 +1,15 @@
 // import npm libs
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 // import local libs
-import { LinkListProps } from "../../types";
+import { LinkListProps } from '../../types';
 // import styles
-import styles from "./LinkList.module.scss";
+import styles from './LinkList.module.scss';
 
 const LinkList = (props: LinkListProps) => {
   const [listVisible, setListVisible] = useState<boolean>(false);
 
-  let lis: Array<JSX.Element> = [];
+  const lis: Array<JSX.Element> = [];
 
   // eslint-disable-next-line array-callback-return
   props.items.map((elem) => {
@@ -28,7 +28,7 @@ const LinkList = (props: LinkListProps) => {
         <span className={styles.title}>{props.title}</span>
         <button
           onClick={() => setListVisible(!listVisible)}
-          className={listVisible ? styles.toggled : ""}
+          className={listVisible ? styles.toggled : ''}
         >
           <svg
             width="11"
@@ -51,3 +51,4 @@ const LinkList = (props: LinkListProps) => {
 };
 
 export default LinkList;
+

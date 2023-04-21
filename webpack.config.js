@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
-const production = process.env.NODE_ENV === 'production'
+const production = process.env.NODE_ENV === 'production';
 
 export const entry = {
   myAppName: _resolve(__dirname, './index.tsx')
@@ -15,6 +15,14 @@ export const output = {
 };
 export const module = {
   rules: [
+    {
+      test: /\.(png|jpe?g|gif|svg)$/i,
+      use: [
+        {
+          loader: 'file-loader',
+        },
+      ],
+    },
     {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,

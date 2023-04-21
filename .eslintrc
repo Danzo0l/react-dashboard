@@ -5,8 +5,7 @@
     "plugin:@typescript-eslint/recommended",
     "react-app/jest",
     "prettier",
-    "eslint-config-prettier",
-    "eslint-plugin-prettier"
+    "eslint-config-prettier"
   ],
   "rules": {
     "no-mixed-spaces-and-tabs": "error",
