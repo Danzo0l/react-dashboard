@@ -1,4 +1,4 @@
-import { ReactElement, SetStateAction } from "react";
+import { ReactElement, SetStateAction } from 'react';
 
 export interface SidebarProps {
   children?: JSX.Element | JSX.Element[];
@@ -19,9 +19,15 @@ export interface LinkListProps {
 
 export interface HeadProps {
   logo: boolean;
-  icon: boolean; // TRUE - list FALSE - layers
   currentState: boolean;
   setCurrentState: React.Dispatch<SetStateAction<boolean>>;
+  left: boolean;
+  compact: boolean;
+}
+
+export interface AccountListProps {
+  compact: boolean;
+  clickEvevnt: React.Dispatch<SetStateAction<boolean>>;
 }
 
 export interface DashboardProps {
@@ -35,3 +41,4 @@ export interface DashboardProps {
         | ReactElement<ContentProps>
       >;
 }
+

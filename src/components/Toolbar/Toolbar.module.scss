@@ -1,20 +1,11 @@
+@import "../../_variables";
+@import "../../_mixins";
+
 .toolbar {
-  box-sizing: border-box;
+  @include bar-menu;
   border-left: 2px solid var(--border-lines-color);
-  min-width: 240px;
-  max-width: 240px;
-  width: auto;
-  box-sizing: border-box;
-  max-height: 100vh;
-  overflow-y: scroll;
-  scrollbar-width: 2px;
-  padding: 0 10px;
-  display: none;
-  z-index: 18;
-  &Active {
-    display: flex;
-    flex-direction: column;
-  }
+  min-width: var(--min-toolbar-width);
+  max-width: var(--max-toolbar-width);
   @media (max-width: 800px) {
     position: absolute;
     top: 0;
@@ -28,7 +19,7 @@
 }
 
 .toolbarMobile {
-  max-height: 48px;
+  max-height: 32px;
   z-index: 20;
   position: fixed;
   bottom: 0;

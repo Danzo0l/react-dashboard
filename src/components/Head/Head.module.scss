@@ -1,29 +1,27 @@
+@import "./../../_mixins";
+
+.btnToogle {
+  @include toogle-bar-btn;
+  @include btn-hover-active;
+}
+
 .head {
-  min-height: 48px;
+  min-height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
   width: 100%;
   img {
-    height: 28px;
+    height: 24px;
   }
-  .btnToogleSidebar {
-    border: none;
-    background: none;
-    margin: 0;
-    padding: 0;
-
-    img {
-      height: 24px;
-      width: 24px;
-    }
-    svg {
+  .btnToogle {
+    .svgBtn {
       fill: var(--btn-color);
-    }
-
-    &:hover {
-      cursor: pointer;
+      height: 20px;
+      &Left {
+        rotate: 180deg;
+      }
     }
   }
 }

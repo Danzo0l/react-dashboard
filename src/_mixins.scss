@@ -14,6 +14,32 @@
     max-height: 100vh;
     padding: 0 10px;
     display: none;
+    width: auto;
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 18;
+    &Active {
+        display: flex;
+        flex-direction: column;
+      }
+}
+
+@mixin toogle-bar-btn {
+    height: 22px;
+    width: auto;
+    padding: 2px;
+    background: none;
+}
+
+@mixin btn-hover-active {
+    border: none;
+    background: none;
+    border-radius: 4px;
+    &:hover {
+        background-color: var(--color-selected-background);
+        cursor: pointer;
+    }
+    &:active {
+        opacity: .5;
+    }
 }
