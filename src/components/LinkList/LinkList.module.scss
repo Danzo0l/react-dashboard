@@ -1,21 +1,35 @@
-section {
+@import "./../../_mixins";
+
+.head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    span {
+    min-width: 120px;
+    max-height: 30px;
+    overflow-x: hidden;
+    height: 26px;
+    .title {
+        line-height: 26px;
         font-size: 120%;
         font-weight: 500;
         margin-left: 0px;
         color: var(--header-text-color);
     }
     button {
-        border: none;
-        background: none;
-        &.toggled {
-            transform: rotate(90deg);
+        @include toogle-bar-btn;
+        @include btn-hover-active;
+        height: 100%;
+        width: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .svgBtn {
+          height: 20px;
+          width: 20px;
         }
-        svg {
-            fill: var(--main-text-color);
+        &.toggled {
+            transform: rotate(-90deg);
         }
     }
 }
@@ -23,6 +37,8 @@ section {
 .list {
     box-sizing: border-box;
     width: inherit;
+    min-width: 120px;
+    overflow-x: hidden;
     list-style: none;
     list-style-position: inside;
     text-indent: 0;
@@ -41,8 +57,6 @@ section {
         border-radius: 4px;
         &:hover {
             background-color: var(--color-selected-background);
-            // border-bottom: 1px solid #ffffff16;
-            // border-top: 1px solid #ffffff16;
         }
     }
 }

@@ -1,6 +1,6 @@
 // import npm libs
 import React from 'react';
-import { useState, useEffect, Children, cloneElement } from 'react';
+import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 // import local libs
 import { SidebarProps } from '../../types';

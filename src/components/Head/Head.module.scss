@@ -3,12 +3,20 @@
 .btnToogle {
   @include toogle-bar-btn;
   @include btn-hover-active;
+  .compact {
+    margin: auto;
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse !important;
 }
 
 .head {
   min-height: 30px;
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 10px;
   width: 100%;
@@ -16,6 +24,10 @@
     height: 24px;
   }
   .btnToogle {
+    margin: 0;
+    .compact {
+      margin: auto;
+    }
     .svgBtn {
       fill: var(--btn-color);
       height: 20px;

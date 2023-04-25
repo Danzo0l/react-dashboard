@@ -13,6 +13,8 @@ export interface ContentProps {
 }
 
 export interface LinkListProps {
+  defaultOpen: boolean;
+  select: 'bg' | 'c';
   title: string;
   items: Array<{ path: string; name: string }>;
 }

@@ -7,7 +7,8 @@
   min-width: var(--min-sidebar-width);
   max-width: var(--max-sidebar-width);
   &Disable {
-    width: 30px;
+    min-width: var(--compact-bar-width);
+    max-width: var(--compact-bar-width);
     display: flex;
     flex-direction: column;
     border-right: 2px solid var(--border-lines-color);

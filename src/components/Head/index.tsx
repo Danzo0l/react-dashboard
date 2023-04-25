@@ -12,7 +12,7 @@ const Head = (props: HeadProps) => {
   const { theme } = useTheme();
 
   return (
-    <div className={styles.head}>
+    <div className={props.left? styles.head : styles.head + ' ' + styles.reverse}>
       {props.logo ? (
         !props.compact ? (
           <img src={theme === 'dark' ? logoDark : logoLight} alt="btn-icon" />
@@ -24,7 +24,7 @@ const Head = (props: HeadProps) => {
       )}
       <button
         onClick={() => props.setCurrentState(!props.currentState)}
-        className={styles.btnToogle}
+        className={props.compact? styles.btnToogle + ' ' + styles.compact: styles.btnToogle}
       >
         {props.left ? (
           <BarOpen className={styles.svgBtn} />
