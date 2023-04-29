@@ -1,62 +1,69 @@
 @import "./../../_mixins";
 
 .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 120px;
+  max-height: 30px;
+  overflow-x: hidden;
+  height: 26px;
+  .title {
+    line-height: 26px;
+    font-size: 120%;
+    font-weight: 500;
+    margin-left: 0px;
+    color: var(--header-text-color);
+  }
+  button {
+    @include toogle-bar-btn;
+    @include btn-hover-active;
+    height: 100%;
+    width: 26px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
-    min-width: 120px;
-    max-height: 30px;
-    overflow-x: hidden;
-    height: 26px;
-    .title {
-        line-height: 26px;
-        font-size: 120%;
-        font-weight: 500;
-        margin-left: 0px;
-        color: var(--header-text-color);
+    justify-content: center;
+    .svgBtn {
+      height: 20px;
+      width: 20px;
     }
+    &.toggled {
+      transform: rotate(-90deg);
+    }
+  }
+  @media (max-width: 576px) {
+    height: 30px;
     button {
-        @include toogle-bar-btn;
-        @include btn-hover-active;
-        height: 100%;
-        width: 26px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .svgBtn {
-          height: 20px;
-          width: 20px;
-        }
-        &.toggled {
-            transform: rotate(-90deg);
-        }
+      height: 100%;
+      width: 30px;
     }
+  }
 }
 
 .list {
-    box-sizing: border-box;
-    width: inherit;
-    min-width: 120px;
-    overflow-x: hidden;
-    list-style: none;
-    list-style-position: inside;
-    text-indent: 0;
-    padding: 0;
-    margin: 0 0 10px 0;
-    box-sizing: border-box;
-    li {
-        .link {
-            text-decoration: none;
-            color: var(--main-text-color);
-        }
-        width: 100%;
-        padding: 4px 6px;
-        font-size: 18px;
-        box-sizing: border-box;
-        border-radius: 4px;
-        &:hover {
-            background-color: var(--color-selected-background);
-        }
+  box-sizing: border-box;
+  width: inherit;
+  min-width: 120px;
+  overflow-x: hidden;
+  list-style: none;
+  list-style-position: inside;
+  text-indent: 0;
+  padding: 0;
+  margin: 0 0 10px 0;
+  box-sizing: border-box;
+  li {
+    .link {
+      text-decoration: none;
+      color: var(--main-text-color);
     }
+    width: 100%;
+    padding: 4px 6px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:hover {
+      background-color: var(--color-selected-background);
+    }
+  }
 }

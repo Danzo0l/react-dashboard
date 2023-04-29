@@ -29,7 +29,7 @@
 }
 
 .toolbarMobile {
-  max-height: 32px;
+  
   z-index: 20;
   position: fixed;
   bottom: 0;
@@ -40,7 +40,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 10px;
+  padding: 0 10px;
   box-sizing: border-box;
   button {
     cursor: pointer;
