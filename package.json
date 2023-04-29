@@ -27,12 +27,25 @@
     "precommit": "lint-staged",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js, jsx, ts, tsx, json, yaml, md, css, scss, sass}": [
+      "node_modules/.bin/eslint --max-warnings=0",
+      "prettier --write",
+      "git add"
     ]
   },
   "browserslist": {
@@ -51,6 +64,7 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.3"
+    "prettier": "^2.8.3",
+    "husky": "^8.0.0"
   }
 }
