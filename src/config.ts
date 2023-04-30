@@ -4,4 +4,3 @@ import logoLight from './assets/img/logotypeLight.svg';
 import logoDark from './assets/img/logotypeDark.svg';
 
 export { logoLight, logoDark };
-

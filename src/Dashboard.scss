@@ -68,6 +68,12 @@ h4, h5, h6 {
   font-weight: 300;
 }
 
+button {
+  border: none;
+  background: none;
+  border-radius: 4px;
+}
+
 *::-webkit-scrollbar {
   display: none;
 }

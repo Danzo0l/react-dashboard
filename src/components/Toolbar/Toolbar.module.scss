@@ -1,93 +1,61 @@
-@import "../../_variables";
+@import "../../variables";
 @import "../../_mixins";
 
 .toolbar {
   @include bar-menu;
-  border-left: 2px solid var(--border-lines-color);
+  border-right: 2px solid var(--border-lines-color);
   min-width: var(--min-toolbar-width);
   max-width: var(--max-toolbar-width);
+  &Active {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-left: 2px solid var(--border-lines-color);
+    min-width: var(--max-toolbar-width);
+    max-width: var(--max-toolbar-width);
+    width: auto;
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+    padding: 0 10px;
+    z-index: 18;
+    @media (max-width: 800px) {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    @media (max-width: 576px) {
+      min-width: 100%;
+      max-width: 100%;
+      z-index: 20;
+    }
+  }
   &Disable {
     min-width: var(--compact-bar-width);
     max-width: var(--compact-bar-width);
-    width: var(--compact-bar-width);
     display: flex;
     flex-direction: column;
     border-left: 2px solid var(--border-lines-color);
     overflow-x: hidden;
     overflow-y: scroll;
-  }
-  @media (max-width: 800px) {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  @media (max-width: 576px) {
-    min-width: 100%;
-    max-width: 100%;
-    z-index: 20;
-  }
-}
-
-.toolbarMobile {
-  
-  z-index: 20;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  border-top: 1px solid var(--border-lines-color);
-  background-color: var(--bar-color);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  box-sizing: border-box;
-  button {
-    cursor: pointer;
-    border: none;
-    background: none;
-  }
-  svg {
-    fill: var(--main-text-color);
-    height: 24px;
-  }
-}
-
-.toolbarBtn {
-  box-sizing: border-box;
-  position: fixed;
-  right: -2px;
-  top: -2px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  opacity: .9;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: 100ms linear; 
-  z-index: 16;
-  &:hover {
-    top: 4px;
-    right: 4px;
-    opacity: 1;
-    transform: scale(1.3);
-    background-color: var(--color-selected-background);
-    backdrop-filter: blur(4px);
-  }
-  &:active {
-    opacity: .1;
-  }
-  img {
-    position: relative;
-    top: 1px;
-    left: 0px;
-    overflow: hidden;
-  }
-  svg {
-    fill: var(--toogle-button);
-    position: relative;
-    top: 1px;
-    right: -1px;
+    @media (max-width: 576px) {
+      min-width: 100%;
+      max-width: 100%;
+      max-height: var(--mobile-bar-height);
+      min-height: var(--mobile-bar-height);
+      z-index: 20;
+      position: fixed;
+      bottom: 0;
+      border-top: 1px solid var(--border-lines-color);
+      border-left: none;
+      background-color: var(--bar-color);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
   }
 }

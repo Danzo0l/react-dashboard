@@ -24,7 +24,6 @@ export interface HeadProps {
   currentState: boolean;
   setCurrentState: React.Dispatch<SetStateAction<boolean>>;
   left: boolean;
-  compact: boolean;
 }
 
 export interface AccountListProps {
@@ -43,4 +42,3 @@ export interface DashboardProps {
         | ReactElement<ContentProps>
       >;
 }
-

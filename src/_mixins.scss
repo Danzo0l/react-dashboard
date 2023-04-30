@@ -25,15 +25,13 @@
 }
 
 @mixin toogle-bar-btn {
-    height: 22px;
+    height: 20px;
     width: auto;
     background: none;
+    border: none;
 }
 
 @mixin btn-hover-active {
-    border: none;
-    background: none;
-    border-radius: 4px;
     &:hover {
         background-color: var(--color-selected-background);
         cursor: pointer;

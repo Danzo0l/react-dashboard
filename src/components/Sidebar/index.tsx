@@ -1,5 +1,4 @@
 // import npm libs
-import React from 'react';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 // import local libs
@@ -13,46 +12,23 @@ const Sidebar = (props: SidebarProps) => {
   // use var names: sidebarActive: boolean, setSidebarActive(boolean)
   const mobileSidebar = useMediaQuery({ query: '(max-width: 576px)' });
   const absSidebar = useMediaQuery({ query: '(max-width: 800px)' });
-  const [sidebarActive, setSidebarActive] = useState(true);
+  const [sidebarActive, setSidebarActive] = useState<boolean>(true);
 
   useEffect(() => {
     (mobileSidebar || absSidebar) && setSidebarActive(false);
   }, [absSidebar, mobileSidebar]);
 
-  return sidebarActive ? (
-    <aside className={styles.sidebar + ' ' + styles.sidebarActive}>
+  return (
+    <aside className={sidebarActive ? styles.sidebarActive : styles.sidebarDisable}>
       <Head
-        logo={true}
+        logo={sidebarActive || mobileSidebar}
         currentState={sidebarActive}
         setCurrentState={setSidebarActive}
         left={true}
-        compact={false}
       />
-      {props.children}
-    </aside>
-  ) : mobileSidebar ? (
-    <nav className={styles.sidebarMobile}>
-      <Head
-        logo={true}
-        currentState={sidebarActive}
-        setCurrentState={setSidebarActive}
-        left={true}
-        compact={false}
-      />
-    </nav>
-  ) : (
-    <aside className={styles.sidebarDisable}>
-      <Head
-        logo={true}
-        currentState={sidebarActive}
-        setCurrentState={setSidebarActive}
-        left={true}
-        compact={true}
-      />
-      {props.children}
+      {(!sidebarActive && mobileSidebar) || props.children}
     </aside>
   );
 };
 
 export default Sidebar;
-

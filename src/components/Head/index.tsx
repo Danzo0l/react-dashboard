@@ -12,29 +12,28 @@ const Head = (props: HeadProps) => {
   const { theme } = useTheme();
 
   return (
-    <div className={props.left? styles.head : styles.head + ' ' + styles.reverse}>
+    <div className={props.left ? styles.head : styles.head + ' ' + styles.reverse}>
       {props.logo ? (
-        !props.compact ? (
-          <img src={theme === 'dark' ? logoDark : logoLight} alt="btn-icon" />
-        ) : (
-          <></>
-        )
-      ) : (
-        <></>
-      )}
+        <img src={theme === 'dark' ? logoDark : logoLight} alt="btn-icon" />
+      ) : null}
       <button
         onClick={() => props.setCurrentState(!props.currentState)}
-        className={props.compact? styles.btnToogle + ' ' + styles.compact: styles.btnToogle}
+        className={styles.btnToogle}
       >
-        {props.left ? (
-          <BarOpen className={styles.svgBtn} />
-        ) : (
+        {/* {props.left ? (
+          props.currentState ? (
+            <BarOpen className={styles.svgBtn} />
+          ) : (
+            <BarClosed className={styles.svgBtn} />
+          )
+        ) : props.currentState ? (
           <BarOpen className={styles.svgBtn + ' ' + styles.svgBtnLeft} />
-        )}
+        ) : (
+          <BarClosed className={styles.svgBtn + ' ' + styles.svgBtnLeft} />
+        )} */}
       </button>
     </div>
   );
 };
 
 export default Head;
-

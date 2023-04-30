@@ -3,8 +3,12 @@
 .btnToogle {
   @include toogle-bar-btn;
   @include btn-hover-active;
-  .compact {
-    margin: auto;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -13,7 +17,7 @@
 }
 
 .head {
-  min-height: 30px;
+  min-height: var(--mobile-bar-height);
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -37,6 +41,6 @@
     }
   }
   @media (max-width: 576px) {
-    min-height: 48px;
+    min-height: var(--mobile-bar-height);
   }
 }
