@@ -1,4 +1,5 @@
 // import npm libs
+import React from 'react';
 import { useState, useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
 // import local libs
@@ -12,21 +13,30 @@ const Sidebar = (props: SidebarProps) => {
   // use var names: sidebarActive: boolean, setSidebarActive(boolean)
   const mobileSidebar = useMediaQuery({ query: '(max-width: 576px)' });
   const absSidebar = useMediaQuery({ query: '(max-width: 800px)' });
-  const [sidebarActive, setSidebarActive] = useState<boolean>(true);
+  const [sidebarActive, setSidebarActive] = useState(true);
 
   useEffect(() => {
     (mobileSidebar || absSidebar) && setSidebarActive(false);
   }, [absSidebar, mobileSidebar]);
 
-  return (
-    <aside className={sidebarActive ? styles.sidebarActive : styles.sidebarDisable}>
+  return !sidebarActive && mobileSidebar ? (
+    <nav className={styles.sidebarMobile}>
       <Head
-        logo={sidebarActive || mobileSidebar}
+        logo={true}
         currentState={sidebarActive}
         setCurrentState={setSidebarActive}
         left={true}
       />
-      {(!sidebarActive && mobileSidebar) || props.children}
+    </nav>
+  ) : (
+    <aside className={sidebarActive? styles.sidebar : styles.sidebarDisable}>
+      <Head
+        logo={sidebarActive}
+        currentState={sidebarActive}
+        setCurrentState={setSidebarActive}
+        left={true}
+      />
+      {props.children}
     </aside>
   );
 };

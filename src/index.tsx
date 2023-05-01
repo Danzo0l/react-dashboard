@@ -1,6 +1,5 @@
 // import npm libs
 import { useEffect } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 // import local libs
 import { DashboardProps } from './types';
 // import styles
@@ -16,7 +15,7 @@ const Dashboard = (props: DashboardProps) => {
 
   return (
     <div className="root">
-      <BrowserRouter>{props.children}</BrowserRouter>
+      {props.children}
     </div>
   );
 };

@@ -20,7 +20,7 @@ const Head = (props: HeadProps) => {
         onClick={() => props.setCurrentState(!props.currentState)}
         className={styles.btnToogle}
       >
-        {/* {props.left ? (
+        {props.left ? (
           props.currentState ? (
             <BarOpen className={styles.svgBtn} />
           ) : (
@@ -30,7 +30,7 @@ const Head = (props: HeadProps) => {
           <BarOpen className={styles.svgBtn + ' ' + styles.svgBtnLeft} />
         ) : (
           <BarClosed className={styles.svgBtn + ' ' + styles.svgBtnLeft} />
-        )} */}
+        )}
       </button>
     </div>
   );

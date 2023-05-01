@@ -18,10 +18,6 @@
     overflow-y: scroll;
     overflow-x: hidden;
     z-index: 18;
-    &Active {
-        display: flex;
-        flex-direction: column;
-      }
 }
 
 @mixin toogle-bar-btn {
