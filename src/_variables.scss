@@ -1,0 +1,44 @@
+html {
+  --select-color: #9CD5EE;
+  --complete-color: #6FCF97;
+  --warning-color: #D2B867;
+  --error-color: #F05B5B;
+
+  --sidebar-width: 260px;
+  --toolbar-width: 200px;
+  --toolbar-compact-width: 64px;
+  --sidebar-compact-width: 84px;
+
+  --bar-toggle-button-size: 36px;
+  --bar-toggled-gap: 20px;
+  --bar-toggled-button-padding: 5px;
+
+  --background-color: #080810;
+  --bar-color: #080810;
+  --text-main-color: #DEDEDE;
+  --text-header-color: #858585;
+  --border-lines-color: #666666;
+  --select-background-color: #ffffff2d;
+  --avatar-outline-color: #F4D7F332
+  }
+
+html[data-theme="dark"] {
+  --background-color: #080810;
+  --bar-color: #080810;
+  --text-main-color: #DEDEDE;
+  --text-header-color: #858585;
+  --border-lines-color: #666666;
+  --select-background-color: #ffffff2d;
+  --avatar-outline-color: #F4D7F332
+}
+
+html[data-theme="light"] {
+  --text-main-color: #0e0e0e;
+  --text-header-color: #727272;
+  --background-color: #ececec;
+  --bar-color: #ececec;
+  --btn-color: #2c2c2c;
+  --border-lines-color: #c4c4c4;
+  --color-background: #ffffff;
+  --select-background-color: #0000001a;
+}

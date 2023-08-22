@@ -1,0 +1,19 @@
+@mixin main-text {
+  font-size: 18px;
+  color: var(--main-text-color);
+}
+
+@mixin header-text {
+  font-size: 24px;
+  color: var(--header-text-color);
+  font-weight: 500;
+}
+
+@mixin bar-menu {
+  box-sizing: border-box;
+  max-height: 100vh;
+  padding: 0 10px;
+  display: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
