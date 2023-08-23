@@ -79,6 +79,10 @@ button {
     justify-content: space-between;
     align-items: center;
 
+    .logo_mobile {
+      display: none;
+    }
+
     button {
       height: var(--bar-toggle-button-size);
       width: var(--bar-toggle-button-size);
@@ -230,21 +234,60 @@ button {
     flex-direction: column;
   }
   .sidebar, .toolbar {
-    position: relative;
-    flex-direction: row;
+    position: absolute;
     max-width: 100%;
+    width: 100%;
+    max-height: 70%;
+    height: 70%;
+    border: none;
+
+    &__header {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px 0;
+      flex-direction: row-reverse;
+
+      .logo_mobile {
+        display: block;
+      }
+    }
 
     &.toggled {
       max-width: 100%;
       width: 100%;
       justify-content: space-between;
       align-items: center;
+
+      .sidebar__content, .toolbar__content {
+        display: none;
+      }
+      .sidebar__header *, .toolbar__header * {
+        margin: 0;
+      }
+      .sidebar__header, .toolbar__header {
+        flex-direction: row-reverse;
+      }
     }
   }
   .sidebar {
-    max-height: var(--sidebar-mobile-height);
+    &.toggled {
+      max-height: var(--sidebar-mobile-height);
+      z-index: 1;
+    }
+    &__header {
+      flex-direction: row;
+    }
+    top: 0;
+    z-index: 2;
+    border-bottom: max(1px, 0.0625rem) solid var(--border-lines-color);
   }
   .toolbar {
-    right: 0;
+    &.toggled {
+      max-height: var(--toolbar-mobile-height);
+      z-index: 1;
+    }
+    bottom: 0;
+    z-index: 2;
+    border-top: max(1px, 0.0625rem) solid var(--border-lines-color);
   }
 }
