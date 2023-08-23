@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 
 @font-face {
   font-family: 'Open Sans';
@@ -22,10 +23,7 @@
   background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
-
-  @media (max-width: 576px) {
-    flex-direction: column;
-  }
+  @include dashboard-layout;
 }
 
 button {
@@ -38,9 +36,7 @@ button {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-
   color: var(--text-main-color);
-
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -115,6 +111,12 @@ button {
     .sidebar__header *, .toolbar__header * {
       margin: 0 auto;
     }
+    .sidebar__content {
+      @include sidebar-toggled-layout;
+    }
+    .toolbar__content {
+      @include toolbar-toggled-layout;
+    }
     .sidebar__content > *, .toolbar__content > * {
       box-sizing: border-box;
       margin: 0 auto var(--bar-toggled-gap);
@@ -125,6 +127,7 @@ button {
         background-color: var(--select-background-color);
         border-radius: 4px;
       }
+      @include bar-toggled-component;
     }
   }
 }
@@ -140,10 +143,14 @@ button {
       max-height: 32px;
     }
   }
+  &__content {
+    @include sidebar-layout;
+  }
   &.toggled {
     min-width: var(--sidebar-compact-width);
     max-width: var(--sidebar-compact-width);
   }
+  @include sidebar;
 }
 
 .toolbar {
@@ -151,10 +158,14 @@ button {
   max-width: var(--toolbar-width);
   border-left: max(1px, 0.0625rem) solid var(--border-lines-color);
 
+  &__content {
+    @include toolbar-layout;
+  }
   &.toggled {
     min-width: var(--toolbar-compact-width);
     max-width: var(--toolbar-compact-width);
   }
+  @include toolbar;
 }
 
 .account {
@@ -198,5 +209,42 @@ button {
       width: calc(var(--bar-toggle-button-size) - var(--bar-toggled-button-padding) * 2);
       border-radius: 4px;
     }
+    @include bar-toggled-component;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar, .toolbar {
+    position: absolute;
+  }
+  .sidebar {
+    left: 0;
+  }
+  .toolbar {
+    right: 0;
+  }
+}
+
+@media (max-width: 519px) {
+  #dashboard {
+    flex-direction: column;
+  }
+  .sidebar, .toolbar {
+    position: relative;
+    flex-direction: row;
+    max-width: 100%;
+
+    &.toggled {
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  .sidebar {
+    max-height: var(--sidebar-mobile-height);
+  }
+  .toolbar {
+    right: 0;
   }
 }
