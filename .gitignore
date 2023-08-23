@@ -6,8 +6,6 @@ test.html
 
 # testing
 /coverage
-index.tsx
-index.html
 App.tsx
 public
 
