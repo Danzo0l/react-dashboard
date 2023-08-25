@@ -1,10 +1,32 @@
 @import './variables';
 
 @mixin sidebar {
-  border: none;
+  border-right: max(1px, 0.0625rem) solid var(--border-lines-color);
+  &.toggled {
+    border-right: max(1px, 0.0625rem) solid var(--border-lines-color);
+    @media (max-width: 500px) {
+      border-right: none;
+    }
+  }
+  @media (max-width: 500px) {
+    border-right: none;
+    border-bottom: max(1px, 0.0625rem) solid var(--border-lines-color);
+  }
 }
 
-@mixin toolbar {}
+@mixin toolbar {
+  border-left: max(1px, 0.0625rem) solid var(--border-lines-color);
+  &.toggled {
+    border-left: max(1px, 0.0625rem) solid var(--border-lines-color);
+    @media (max-width: 500px) {
+      border-left: none;
+    }
+  }
+  @media (max-width: 500px) {
+    border-left: none;
+    border-top: max(1px, 0.0625rem) solid var(--border-lines-color);
+  }
+}
 
 @mixin dashboard-layout {}
 
@@ -16,4 +38,13 @@
 
 @mixin toolbar-toggled-layout {}
 
-@mixin bar-toggled-component {}
+@mixin bar-component {
+  margin: 0 auto var(--bar-toggled-gap);
+}
+
+@mixin bar-toggled-component {
+  margin: 0 auto var(--bar-toggled-gap);
+  @media (max-width: 500px) {
+    margin-right: calc(33% - var(--bar-toggle-button-size));
+  }
+}

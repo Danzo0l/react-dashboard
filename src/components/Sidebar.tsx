@@ -14,7 +14,11 @@ export const Sidebar: React.FC<SidebarProps> = (props) => {
   return (
     <aside id="sidebar" className={sidebarOpen ? 'sidebar' : 'sidebar toggled'}>
       <div className="sidebar__header">
-        {sidebarOpen && <img src={props.logo || logotype} alt="logo" />}
+        <img
+          className={sidebarOpen ? 'logo' : 'logo hidden'}
+          src={props.logo || logotype}
+          alt="logo"
+        />
         <button onClick={() => setSidebarOpen(!sidebarOpen)}>
           <ToggleButton aria-label="toggle sidebar" />
         </button>
